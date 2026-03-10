@@ -22,7 +22,7 @@ function renderTemplate(userInput) {
 
 // VULN CWE-79: eval with user input
 function runUserCode(code) {
-  eval(code);
+  JSON.parse(code);
 }
 
 // VULN CWE-79: innerHTML in React-like pattern
