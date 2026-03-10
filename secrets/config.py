@@ -9,7 +9,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_REGION = "us-east-1"
 
 # VULN CWE-798: Hardcoded Stripe test key
-STRIPE_SECRET_KEY = "sk_test_51ExampleCodeguardTestFixture00000000000000"
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 STRIPE_PUBLISHABLE_KEY = "pk_test_51ExampleCodeguardTestFixture0000000000"
 
 # VULN CWE-798: Hardcoded database password
