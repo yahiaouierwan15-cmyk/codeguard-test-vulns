@@ -8,8 +8,8 @@ def get_user(username):
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
     # VULN CWE-89: string concatenation in SQL
-    query = "SELECT * FROM users WHERE username = '" + username + "'"
-    cursor.execute(query)
+    query = "SELECT * FROM users WHERE username = ?"
+    cursor.execute(query, (username,))
     return cursor.fetchone()
 
 def get_orders(user_id):
