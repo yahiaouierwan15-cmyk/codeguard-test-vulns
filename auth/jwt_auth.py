@@ -7,7 +7,7 @@ import json
 
 # VULN CWE-347: algorithm=none disables signature verification
 def decode_token_unsafe(token):
-    return jwt.decode(token, options={"verify_signature": False})
+    return jwt.decode(token, options={"verify_signature": True})
 
 # VULN CWE-347: explicitly specifying "none" algorithm
 def decode_with_none_alg(token):
