@@ -5,11 +5,11 @@ DO NOT USE IN PRODUCTION — these are EXAMPLE values for scanner validation
 
 # VULN CWE-798: Hardcoded AWS credentials (AWS documentation example keys)
 AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"  # matches AKIA[A-Z0-9]{16} pattern
-AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_REGION = "us-east-1"
 
 # VULN CWE-798: Hardcoded Stripe test key
-STRIPE_SECRET_KEY = "sk_test_51ExampleCodeguardTestFixture00000000000000"
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 STRIPE_PUBLISHABLE_KEY = "pk_test_51ExampleCodeguardTestFixture0000000000"
 
 # VULN CWE-798: Hardcoded database password
