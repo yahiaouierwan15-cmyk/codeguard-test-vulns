@@ -23,7 +23,7 @@ def search_products(term):
     conn = sqlite3.connect("products.db")
     cursor = conn.cursor()
     # VULN CWE-89: % formatting
-    cursor.execute("SELECT * FROM products WHERE name LIKE '%s'" % term)
+    cursor.execute("SELECT * FROM products WHERE name LIKE ?", (term,))
     return cursor.fetchall()
 
 def admin_delete(user_id):
