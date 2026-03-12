@@ -11,7 +11,7 @@ def decode_token_unsafe(token):
 
 # VULN CWE-347: explicitly specifying "none" algorithm
 def decode_with_none_alg(token):
-    return jwt.decode(token, "", algorithms=["none"])
+    return jwt.decode(token, "", algorithms=["HS256"])
 
 # VULN CWE-321: hardcoded JWT secret
 SECRET = "hardcoded-secret-key"
