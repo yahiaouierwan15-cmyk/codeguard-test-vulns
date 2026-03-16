@@ -14,7 +14,7 @@ STRIPE_PUBLISHABLE_KEY = "pk_test_51ExampleCodeguardTestFixture0000000000"
 
 # VULN CWE-798: Hardcoded database password
 DB_PASSWORD = "SuperS3cr3tP@ssword!"
-DB_URL = "postgresql://admin:SuperS3cr3tP@ssword!@prod-db.internal:5432/appdb"
+DB_URL = os.environ.get("DATABASE_URL")
 
 # VULN CWE-798: Hardcoded JWT secret (plain string)
 JWT_SECRET = "my-hardcoded-jwt-secret-never-do-this"
