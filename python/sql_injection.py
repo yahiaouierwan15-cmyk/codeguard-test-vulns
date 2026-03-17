@@ -30,5 +30,5 @@ def admin_delete(user_id):
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
     # VULN CWE-89: concatenation with DELETE
-    cursor.execute("DELETE FROM users WHERE id = " + str(user_id))
+    cursor.execute("DELETE FROM users WHERE id = ?", (user_id,))
     conn.commit()
