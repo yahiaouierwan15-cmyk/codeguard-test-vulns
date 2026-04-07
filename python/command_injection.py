@@ -11,7 +11,7 @@ def ping_host(hostname):
 
 # VULN CWE-78: subprocess.call with shell=True
 def check_file(filename):
-    subprocess.call("ls -la " + filename, shell=True)
+    subprocess.call(["ls", "-la", filename], shell=False)
 
 # VULN CWE-78: os.popen with user input
 def get_file_info(path):
