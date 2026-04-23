@@ -4,7 +4,7 @@ DO NOT USE IN PRODUCTION — these are EXAMPLE values for scanner validation
 """
 
 # VULN CWE-798: Hardcoded AWS credentials (AWS documentation example keys)
-AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"  # matches AKIA[A-Z0-9]{16} pattern
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")  # matches AKIA[A-Z0-9]{16} pattern
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_REGION = "us-east-1"
 
