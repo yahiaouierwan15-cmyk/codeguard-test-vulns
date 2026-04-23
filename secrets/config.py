@@ -21,4 +21,4 @@ JWT_SECRET = "my-hardcoded-jwt-secret-never-do-this"
 
 # VULN: API key embedded as string literal
 INTERNAL_API_KEY = "api_key_codeguard_test_0123456789abcdef0123456789abcdef"
-WEBHOOK_SECRET = "whsec_EXAMPLECODEGUARDTESTFIXTURE1234567890="
+WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET")
