@@ -4,6 +4,7 @@ DO NOT USE IN PRODUCTION
 """
 import jwt
 import json
+import os
 
 # VULN CWE-347: algorithm=none disables signature verification
 def decode_token_unsafe(token):
@@ -17,7 +18,7 @@ def decode_with_none_alg(token):
 SECRET = "hardcoded-secret-key"
 
 def encode_with_hardcoded_secret(payload):
-    return jwt.encode(payload, "hardcoded-secret-key", algorithm="HS256")
+    return jwt.encode(payload, os.environ["JWT_SECRET"], algorithm="HS256")
 
 def decode_with_hardcoded_secret(token):
     return jwt.decode(token, "hardcoded-secret-key", algorithms=["HS256"])
