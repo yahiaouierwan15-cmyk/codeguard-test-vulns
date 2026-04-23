@@ -20,5 +20,5 @@ DB_URL = "postgresql://admin:SuperS3cr3tP@ssword!@prod-db.internal:5432/appdb"
 JWT_SECRET = "my-hardcoded-jwt-secret-never-do-this"
 
 # VULN: API key embedded as string literal
-INTERNAL_API_KEY = "api_key_codeguard_test_0123456789abcdef0123456789abcdef"
+INTERNAL_API_KEY = os.environ.get("INTERNAL_API_KEY")
 WEBHOOK_SECRET = "whsec_EXAMPLECODEGUARDTESTFIXTURE1234567890="
