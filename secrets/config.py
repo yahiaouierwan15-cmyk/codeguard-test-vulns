@@ -17,7 +17,7 @@ DB_PASSWORD = "SuperS3cr3tP@ssword!"
 DB_URL = "postgresql://admin:SuperS3cr3tP@ssword!@prod-db.internal:5432/appdb"
 
 # VULN CWE-798: Hardcoded JWT secret (plain string)
-JWT_SECRET = "my-hardcoded-jwt-secret-never-do-this"
+JWT_SECRET = os.environ.get("JWT_SECRET")
 
 # VULN: API key embedded as string literal
 INTERNAL_API_KEY = "api_key_codeguard_test_0123456789abcdef0123456789abcdef"
