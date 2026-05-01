@@ -16,7 +16,7 @@ def get_orders(user_id):
     conn = sqlite3.connect("orders.db")
     cursor = conn.cursor()
     # VULN CWE-89: f-string in SQL
-    cursor.execute(f"SELECT * FROM orders WHERE user_id = {user_id}")
+    cursor.execute("SELECT * FROM orders WHERE user_id = ?", (user_id,))
     return cursor.fetchall()
 
 def search_products(term):
